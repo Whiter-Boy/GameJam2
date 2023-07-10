@@ -12,11 +12,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Floor
+<<<<<<< HEAD
   - TestShader
+=======
+  - 
+>>>>>>> 6877a24f03c8d605ffd47d9a321612cdad84f70e
   - 
   - 
   - 
