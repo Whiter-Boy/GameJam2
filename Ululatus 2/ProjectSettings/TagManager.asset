@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Objects
+  - Terrain
+  - Jumpscare
+  - Monster
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,11 @@ TagManager:
   - Water
   - UI
   - Floor
+<<<<<<< HEAD
+  - TestShader
+=======
   - 
+>>>>>>> 6877a24f03c8d605ffd47d9a321612cdad84f70e
   - 
   - 
   - 

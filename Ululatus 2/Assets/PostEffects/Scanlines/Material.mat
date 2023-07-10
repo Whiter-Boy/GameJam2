@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amount: 500
+    - _Amount: 800
     - _Glossiness: 0.5
     - _Grayscale: 0
     - _Metallic: 0
