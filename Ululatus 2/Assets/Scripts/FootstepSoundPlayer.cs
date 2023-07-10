@@ -18,6 +18,7 @@ public class FootstepSoundPlayer : MonoBehaviour{
     public int WalkSpeed;
     public int SprintSpeed;
 
+
     public CharacterController Controller;
     private AudioSource AudioSource;
 
@@ -36,13 +37,15 @@ public class FootstepSoundPlayer : MonoBehaviour{
         while(true)
         {
             //if (Controller.isGrounded && Controller.velocity != Vector3.zero && Physics.Raycast(transform.position - new Vector3(0, 0.5f * Controller.height + 0.5f * Controller.radius, 0),
-            if (Controller.isGrounded && Controller.velocity != Vector3.zero && Controller.velocity.magnitude <= 2.9 && Physics.Raycast(transform.position - new Vector3(0, 0.5f * Controller.height, 0),
+            if (Controller.isGrounded && Controller.velocity != Vector3.zero && Controller.velocity.magnitude <= 4.9 && Physics.Raycast(transform.position - new Vector3(0, 0.5f * Controller.height, 0),
                 Vector3.down,
                 out RaycastHit hit,
                 1f,
+                
                 FloorLayer)
                 )
                 {
+                    
                     if(hit.collider.TryGetComponent<Terrain>(out Terrain terrain))
                     {
                         yield return StartCoroutine(PlayFootstepSoundFromTerrain(terrain, hit.point));
@@ -52,14 +55,15 @@ public class FootstepSoundPlayer : MonoBehaviour{
                         yield return StartCoroutine(PlayFootstepSoundFromRenderer(renderer));
                     }
                 }
-            else if (Controller.isGrounded && Controller.velocity != Vector3.zero && Controller.velocity.magnitude >= 3 && Physics.Raycast(transform.position - new Vector3(0, 0.5f * Controller.height, 0),
+            else if (Controller.isGrounded && Controller.velocity != Vector3.zero && Controller.velocity.magnitude >= 5 && Physics.Raycast(transform.position - new Vector3(0, 0.5f * Controller.height, 0),
                 Vector3.down,
                 out RaycastHit hit2,
                 1f,
                 FloorLayer)
                 )
                 {
-                    if(hit2.collider.TryGetComponent<Terrain>(out Terrain terrain))
+                    
+                    if (hit2.collider.TryGetComponent<Terrain>(out Terrain terrain))
                     {
                         yield return StartCoroutine(PlayFootstepSoundFromTerrainSprint(terrain, hit2.point));
                     }
