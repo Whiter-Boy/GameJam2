@@ -1,4 +1,4 @@
-using UnityEngine;
+	using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace StarterAssets
@@ -251,6 +251,18 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		public void NoStamina()
+		{
+			MoveSpeed = 0;
+			SprintSpeed = 0;
+		}
+
+		public void AbleToMove()
+		{
+			MoveSpeed = 4;
+			SprintSpeed = 6;
 		}
 	}
 }
