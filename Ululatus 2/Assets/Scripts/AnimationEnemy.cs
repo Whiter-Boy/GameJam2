@@ -16,7 +16,7 @@ public class AnimationEnemy : MonoBehaviour
             if (anim != null)
             {
                 // play Bounce but start at a quarter of the way though
-                anim.Play("Animator23", 0, 0.25f);
+                anim.Play("Monstum", 0, 0.25f);
             }
         }
 }
