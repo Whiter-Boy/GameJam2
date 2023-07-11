@@ -6,10 +6,13 @@ public class ReadNotes : MonoBehaviour
 {
     public GameObject player;
     public GameObject noteUI;
-    public GameObject hud;
+    public GameObject obj;
     public GameObject inv;
     public GameObject bc;
     public Behaviour FirstPersonController;
+    public bool key;
+    public bool shotgun;
+    public bool ammo;
 
     public GameObject pickUpText;
 
@@ -19,8 +22,8 @@ public class ReadNotes : MonoBehaviour
 
     void Start()
     {
-        noteUI.SetActive(false);
-        //hud.SetActive(true);
+        //noteUI.SetActive(false);
+        obj.SetActive(true);
         //inv.SetActive(true);
         pickUpText.SetActive(false);
 
@@ -47,32 +50,30 @@ public class ReadNotes : MonoBehaviour
         }
     }
 
-
-
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && inReach)
         {
-            noteUI.SetActive(true);
+            //noteUI.SetActive(true);
             pickUpSound.Play();
-            //hud.SetActive(false);
+            if (key == true)
+            {
+                //player.gameObject.GetComponent<>(CollecedItems);
+            }
+            if (shotgun == true)
+            {
+                player.gameObject.GetComponent<CollecedItems>().shotgun = true;
+            }
+            if (ammo == true)
+            {
+                player.gameObject.GetComponent<CollecedItems>().ammo = true;
+            }
+            obj.SetActive(false);
             //inv.SetActive(false);
-            FirstPersonController.enabled = false;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //FirstPersonController.enabled = false;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
         }
         
-    }
-
-
-    public void ExitButton()
-    {
-        noteUI.SetActive(false);
-        //hud.SetActive(true);
-        //inv.SetActive(true);
-        FirstPersonController.enabled = true;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 }
