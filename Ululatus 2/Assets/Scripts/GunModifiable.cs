@@ -27,8 +27,8 @@ public class GunModifiable : MonoBehaviour
     public Transform attackPoint;
 
     //Graphics
-    public TextMeshProUGUI ammunitionDisplay;
-    public TextMeshProUGUI reloadingText;
+    //public TextMeshProUGUI ammunitionDisplay;
+    //public TextMeshProUGUI reloadingText;
 
     // thing
     public bool allowInvoke = true;
@@ -46,8 +46,8 @@ public class GunModifiable : MonoBehaviour
         MyInput();
 
         //Set ammo display
-        if (ammunitionDisplay != null)
-            ammunitionDisplay.SetText(bulletsLeft/ bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+        //if (ammunitionDisplay != null)
+        //    ammunitionDisplay.SetText(bulletsLeft/ bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
 
     private void MyInput()
@@ -147,17 +147,17 @@ public class GunModifiable : MonoBehaviour
     private void Reload()
     {
         reloading = true;
-        if (reloading == true)
-        {
-            reloadingText.SetText("Reloading");
-        }
+        //if (reloading == true)
+        //{
+        //    reloadingText.SetText("Reloading");
+        //}
         Invoke("ReloadFinished", reloadTime);
     }
 
     private void ReloadFinished()
     {
         bulletsLeft = magazineSize;
-        reloadingText.SetText(" ");
+        //reloadingText.SetText(" ");
         reloading = false;
     }
 

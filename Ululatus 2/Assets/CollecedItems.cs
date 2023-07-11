@@ -7,23 +7,30 @@ public class CollecedItems : MonoBehaviour
     public bool key;
     public bool shotgun;
     public bool ammo;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject keyobj;
+    public GameObject shotgunobj;
+    public GameObject player;
+    public Behaviour GunSAcript;
+
+    public GameObject lockedDoor;
 
     // Update is called once per frame
     void Update()
     {
         if (shotgun)
         {
-            // give player shotgun
+            shotgunobj.SetActive(true);
+            GunSAcript.GetComponent<GunModifiable>().enabled = true;
         }
 
         if (ammo)
         {
-            // add ammo to player
+            GunSAcript.GetComponent<GunModifiable>().magazineSize = 30;
+        }
+
+        if (key)
+        {
+            lockedDoor.GetComponent<DoorDisable>().playerhaskey = true;
         }
     }
 }

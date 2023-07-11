@@ -37,7 +37,7 @@ public class ReadNotes : MonoBehaviour
         {
             inReach = true;
             pickUpText.SetActive(true);
-            bc.SetActive(false);
+            //bc.SetActive(false);
         }
     }
 
@@ -58,14 +58,17 @@ public class ReadNotes : MonoBehaviour
             pickUpSound.Play();
             if (key == true)
             {
-                //player.gameObject.GetComponent<>(CollecedItems);
+                pickUpText.SetActive(false);
+                player.gameObject.GetComponent<CollecedItems>().key = true;
             }
             if (shotgun == true)
             {
+                pickUpText.SetActive(false);
                 player.gameObject.GetComponent<CollecedItems>().shotgun = true;
             }
             if (ammo == true)
             {
+                pickUpText.SetActive(false);
                 player.gameObject.GetComponent<CollecedItems>().ammo = true;
             }
             obj.SetActive(false);

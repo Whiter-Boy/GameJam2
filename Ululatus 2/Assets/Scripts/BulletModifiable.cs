@@ -61,7 +61,8 @@ public class BulletModifiable : MonoBehaviour
         {
             //Get component of enemy and call Take Damage
 
-            enemies[i].GetComponent<EnemyDamage>().TakeDamage(explosionDamage);
+            //enemies[i].GetComponent<EnemyDamage>().TakeDamage(explosionDamage);
+            enemies[i].GetComponent<EnemyAi>().health = 0;
         }
 
         //A little delay is added to make sure everything works
@@ -87,7 +88,7 @@ public class BulletModifiable : MonoBehaviour
         collisions++;
 
         //Explode if bullet hits an enemy directly and explodeOnTouch is On
-        if (collision.collider.CompareTag("Enemy") && explodeOnTouch)
+        if (collision.collider.CompareTag("Monster"))
         {
             Explode();
         }
