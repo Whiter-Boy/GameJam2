@@ -1,19 +1,26 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using TMPro;
+using UnityEngine.UI;
 
 public class StaminaDrain : MonoBehaviour
 {
     public float stamina;
 
-    public CharacterController Controller;
+    public GameObject player;
+
+    public Text staminaText;
+
+    private bool outOfStamina;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        outOfStamina = false;
     }
 
     // Update is called once per frame
@@ -22,28 +29,37 @@ public class StaminaDrain : MonoBehaviour
         //Walking Stamina
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
-            Debug.Log(stamina);
-            DrainStaminaWalk();
+            if (outOfStamina == false)
+            {
+                DrainStaminaWalk();
+            }
         }
         if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         {
-            Debug.Log(stamina);
-            DrainStaminaWalk();
+            if (outOfStamina == false)
+            {
+                DrainStaminaWalk();
+            }
+
         }
 
         // Running Stamina
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            Debug.Log(stamina);
+
             DrainStaminaRun();
         }
         if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            Debug.Log(stamina);
-            DrainStaminaRun();
+
+            if (outOfStamina == false)
+            {
+                DrainStaminaRun();
+            }
+            
         }
 
-
+        staminaText.text ="Stamina: " + Mathf.Round(stamina) + "%";
 
 
 
@@ -55,7 +71,21 @@ public class StaminaDrain : MonoBehaviour
         }
 
 
+        // check if player has over 15 stamina to enable movement
+        if (stamina > 15)
+        {
+            player.gameObject.GetComponent<FirstPersonController>().AbleToMove();
+            outOfStamina = false;
+        }
 
+
+        // disables player walking on 0 stamina
+        if (stamina < 0.1)
+        {
+            outOfStamina = true;
+            player.gameObject.GetComponent<FirstPersonController>().NoStamina();
+            
+        }
 
 
 
@@ -65,7 +95,7 @@ public class StaminaDrain : MonoBehaviour
     {
         if (stamina > 0.1)
         {
-            stamina -= Time.deltaTime * 5;
+            stamina -= Time.deltaTime * 3;
         }
 
     }
@@ -74,7 +104,7 @@ public class StaminaDrain : MonoBehaviour
     {
         if (stamina > 0.1)
         {
-            stamina -= Time.deltaTime * 10;
+            stamina -= Time.deltaTime * 6;
         }
 
     }
@@ -87,4 +117,8 @@ public class StaminaDrain : MonoBehaviour
         }
 
     }
+
+    
+
+
 }
