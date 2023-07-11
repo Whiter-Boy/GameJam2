@@ -7917,7 +7917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f045d3c92e8b24847a4266b681e631e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameSceneName: MainScene2
+  newGameSceneName: MainScene3
   optionsSceneName: Settings
   mainSceneName: 
   controlsSceneName: CONTROLS

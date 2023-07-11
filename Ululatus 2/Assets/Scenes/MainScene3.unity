@@ -404,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16402484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.900017, y: 4.45, z: -0.0000076293945}
+  m_LocalPosition: {x: 59.90014, y: 4.45, z: -0.0000076293945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2903,7 +2903,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.8392157, g: 0.8949813, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2942,7 +2942,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10467,7 +10467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499865497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 59.900017, y: 4.45, z: -0.0000076293945}
+  m_LocalPosition: {x: 59.90014, y: 4.45, z: -0.0000076293945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10482,13 +10482,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499865497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6ed554b23b541d4ea9201bf78a3e238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0a3c04d411f83614ab285ced492c8fcb, type: 3}
   VHSClip: {fileID: 32900000, guid: 52d63a2eb55128c498456280a99c2990, type: 3}
+  EnableEffect: 1
 --- !u!328 &499865510
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -10497,7 +10498,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499865497}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 52d63a2eb55128c498456280a99c2990, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 499865498}
@@ -10520,7 +10521,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -13550,12 +13551,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725846498}
-  m_LocalRotation: {x: -0.7071069, y: -1.14555235e-14, z: -2.681384e-14, w: 0.7071067}
-  m_LocalPosition: {x: 7.610865e-14, y: 0.000000004767773, z: 0.000000019073608}
-  m_LocalScale: {x: 97.23686, y: 97.23687, z: 97.23687}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1513771478}
+  m_Father: {fileID: 1810340887}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &725846500
@@ -21201,9 +21202,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-'
+  m_Text: 
 --- !u!222 &934343722
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22497,7 +22496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -32938,7 +32937,6 @@ GameObject:
   - component: {fileID: 1513771476}
   - component: {fileID: 1513771475}
   - component: {fileID: 1513771474}
-  - component: {fileID: 1513771473}
   - component: {fileID: 1513771479}
   m_Layer: 0
   m_Name: Monstum
@@ -32947,23 +32945,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &1513771473
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513771472}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 1478191997681277186, guid: 303a5029230058d4aa4d46a8ea05d48d,
-    type: 3}
-  m_Animations:
-  - {fileID: 1478191997681277186, guid: 303a5029230058d4aa4d46a8ea05d48d, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &1513771474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32979,6 +32960,7 @@ MonoBehaviour:
   agent: {fileID: 1513771476}
   player: {fileID: 1124729860}
   player2: {fileID: 2074049049}
+  VHS: {fileID: 499865509}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -32992,7 +32974,7 @@ MonoBehaviour:
   projectile: {fileID: 2086441042}
   sightRange: 25
   attackRange: 0
-  playerInSightRange: 1
+  playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!65 &1513771475
 BoxCollider:
@@ -33017,10 +32999,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.8
-  m_Speed: 7
+  m_Speed: 4
   m_Acceleration: 16
   avoidancePriority: 50
-  m_AngularSpeed: 240
+  m_AngularSpeed: 1000
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -33040,7 +33022,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 303a5029230058d4aa4d46a8ea05d48d, type: 3}
   m_Controller: {fileID: 9100000, guid: 8639bc3b724a64a4c81ba82d92cce8d1, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -33061,7 +33043,6 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 725846499}
   - {fileID: 1810340887}
   - {fileID: 2072899993}
   - {fileID: 1859059056}
@@ -37011,7 +36992,7 @@ GameObject:
   - component: {fileID: 1810340887}
   - component: {fileID: 1810340888}
   m_Layer: 0
-  m_Name: Cry Wolf.001
+  m_Name: Cry Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37028,9 +37009,10 @@ Transform:
   m_LocalPosition: {x: 7.610865e-14, y: 0.000000004767773, z: 0.000000019073608}
   m_LocalScale: {x: 97.23686, y: 97.23687, z: 97.23687}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 725846499}
   m_Father: {fileID: 1513771478}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &1810340888
 SkinnedMeshRenderer:
@@ -38313,6 +38295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0a3c04d411f83614ab285ced492c8fcb, type: 3}
   VHSClip: {fileID: 32900000, guid: 52d63a2eb55128c498456280a99c2990, type: 3}
+  EnableEffect: 1
 --- !u!328 &1859059046
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -38541,7 +38524,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1513771478}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -9.85, y: 180, z: 0}
 --- !u!1 &1859178144
 GameObject:
@@ -39512,10 +39495,10 @@ RectTransform:
   m_Father: {fileID: 1031264739}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.58105, y: 223}
-  m_SizeDelta: {x: 409.5591, y: 69.631}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 204.77956, y: -34.81549}
+  m_SizeDelta: {x: 409.5591, y: 69.63098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933272799
 MonoBehaviour:
@@ -41570,7 +41553,7 @@ Transform:
   m_Children:
   - {fileID: 239267387}
   m_Father: {fileID: 1513771478}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2074049049
 GameObject:
@@ -41600,8 +41583,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074049049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.9, y: 2.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 59.900124, y: 2.7, z: -0.0000076293945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
