@@ -16,6 +16,8 @@ public class StaminaDrain : MonoBehaviour
 
     private bool outOfStamina;
 
+    public Text warning;
+
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +79,7 @@ public class StaminaDrain : MonoBehaviour
         if (stamina > 15)
         {
             player.gameObject.GetComponent<FirstPersonController>().AbleToMove();
+            warning.gameObject.SetActive(false);
             outOfStamina = false;
         }
 
@@ -86,6 +89,8 @@ public class StaminaDrain : MonoBehaviour
         {
             outOfStamina = true;
             player.gameObject.GetComponent<FirstPersonController>().NoStamina();
+            warning.gameObject.SetActive(true);
+            warning.text = "i need to stand still and rest (15%)";
             
         }
 
