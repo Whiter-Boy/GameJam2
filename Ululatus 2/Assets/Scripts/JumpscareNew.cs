@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class JumpscareNew : MonoBehaviour
 {
     public GameObject JumpscareCam;
-    //public AudioSource JumpscareAudio;
+    public AudioSource JumpscareAudio;
     public GameObject Cam1;
     //private Animator anim;
     public GameObject animpath;
     public GameObject Cam2;
     public GameObject Player;
+    public int JumpscareTime;
     public string badEndingSceneName;
     public bool JumpscareCamOn;
     // Start is called before the first frame update
@@ -35,10 +36,10 @@ public class JumpscareNew : MonoBehaviour
                 Cam1.SetActive(false);
                 Cam2.SetActive(false);
                 Player.SetActive(false);
-                //JumpscareAudio.Play();
+                JumpscareAudio.Play();
                 //anim.enabled = true;
                 //anim.Play("Animator23", 0, 0.25f);
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(JumpscareTime);
                 SceneManager.LoadScene(badEndingSceneName);
             }
         }

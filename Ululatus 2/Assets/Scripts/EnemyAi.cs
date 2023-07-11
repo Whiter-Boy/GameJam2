@@ -1,12 +1,14 @@
 
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.XR;
 
 public class EnemyAi : MonoBehaviour
 {
     public NavMeshAgent agent;
 
     public Transform player;
+    public CharacterController controller;
     public GameObject player2;
     public Behaviour VHS;
 
@@ -42,7 +44,7 @@ public class EnemyAi : MonoBehaviour
 
         if (!playerInSightRange && !playerInAttackRange) 
             Patroling();
-        if (playerInSightRange && !playerInAttackRange)
+        if (playerInSightRange && !playerInAttackRange && controller.velocity.magnitude == 0)
             ChasePlayer();
             //VHS.gameObject.GetComponent<VHSPostProcessEffect>().EnableEffect = false;
 
@@ -77,8 +79,17 @@ public class EnemyAi : MonoBehaviour
 
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
-        VHS.enabled = true;
+        if (controller.velocity.magnitude == 0)
+        {
+            agent.SetDestination(player.position);
+            VHS.enabled = true;
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
+            transform.LookAt(player);
+            VHS.enabled = false;
+        }
     }
 
     private void AttackPlayer()

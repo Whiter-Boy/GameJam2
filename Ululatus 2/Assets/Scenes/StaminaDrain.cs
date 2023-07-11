@@ -46,8 +46,10 @@ public class StaminaDrain : MonoBehaviour
         // Running Stamina
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0 && Input.GetKey(KeyCode.LeftShift))
         {
-
-            DrainStaminaRun();
+            if (outOfStamina == false)
+            {
+                DrainStaminaRun();
+            }
         }
         if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0 && Input.GetKey(KeyCode.LeftShift))
         {
@@ -95,7 +97,7 @@ public class StaminaDrain : MonoBehaviour
     {
         if (stamina > 0.1)
         {
-            stamina -= Time.deltaTime * 3;
+            stamina -= Time.deltaTime * 2;
         }
 
     }
@@ -104,7 +106,7 @@ public class StaminaDrain : MonoBehaviour
     {
         if (stamina > 0.1)
         {
-            stamina -= Time.deltaTime * 6;
+            stamina -= Time.deltaTime * 4;
         }
 
     }
@@ -113,7 +115,7 @@ public class StaminaDrain : MonoBehaviour
     {
         if (stamina < 100)
         {
-            stamina += Time.deltaTime * 5;
+            stamina += Time.deltaTime * 8;
         }
 
     }

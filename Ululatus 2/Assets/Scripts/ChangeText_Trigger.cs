@@ -10,6 +10,8 @@ public class ChangeText_Trigger : MonoBehaviour
     public GameObject Background;
     public string givenText;
     public string givenStartText;
+    public int WaitTimeStart;
+    public int WaitTimeNormal;
     //private Text UIText;
 
     IEnumerator Start(){
@@ -18,7 +20,7 @@ public class ChangeText_Trigger : MonoBehaviour
             //PlayerDialogue.text = "The car battery is dead. I gotta find a shelter.";
             Background.SetActive(true);
             PlayerDialogue.text = givenStartText;
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(WaitTimeStart);
             PlayerDialogue.text = "";
             Background.SetActive(false);
         }
@@ -29,7 +31,7 @@ public class ChangeText_Trigger : MonoBehaviour
         if (collision.gameObject.tag == "Player"){
             Background.SetActive(true);
             PlayerDialogue.text = givenText;
-            yield return new WaitForSeconds(8);
+            yield return new WaitForSeconds(WaitTimeNormal);
             PlayerDialogue.text = "";
             Background.SetActive(false);
             Destroy(this);
