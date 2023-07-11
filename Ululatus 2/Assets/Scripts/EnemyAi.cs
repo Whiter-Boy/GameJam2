@@ -44,7 +44,11 @@ public class EnemyAi : MonoBehaviour
 
         if (!playerInSightRange && !playerInAttackRange) 
             Patroling();
+<<<<<<< HEAD
         if (playerInSightRange && !playerInAttackRange && controller.velocity.magnitude == 0)
+=======
+        if (playerInSightRange && !playerInAttackRange)
+>>>>>>> a72a8e4fd9a7beda0a2cda54266d1e5a7bb0c6f3
             ChasePlayer();
             //VHS.gameObject.GetComponent<VHSPostProcessEffect>().EnableEffect = false;
 
@@ -79,6 +83,7 @@ public class EnemyAi : MonoBehaviour
 
     private void ChasePlayer()
     {
+<<<<<<< HEAD
         if (controller.velocity.magnitude == 0)
         {
             agent.SetDestination(player.position);
@@ -90,6 +95,10 @@ public class EnemyAi : MonoBehaviour
             transform.LookAt(player);
             VHS.enabled = false;
         }
+=======
+        agent.SetDestination(player.position);
+        VHS.enabled = true;
+>>>>>>> a72a8e4fd9a7beda0a2cda54266d1e5a7bb0c6f3
     }
 
     private void AttackPlayer()
