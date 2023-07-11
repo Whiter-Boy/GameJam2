@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiTutorial : MonoBehaviour
+public class EnemyAi : MonoBehaviour
 {
     public NavMeshAgent agent;
 
     public Transform player;
     public GameObject player2;
+    public Behaviour VHS;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -39,13 +40,18 @@ public class EnemyAiTutorial : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (!playerInSightRange && !playerInAttackRange) 
+            Patroling();
+        if (playerInSightRange && !playerInAttackRange)
+            ChasePlayer();
+            //VHS.gameObject.GetComponent<VHSPostProcessEffect>().EnableEffect = false;
+
         //if (playerInAttackRange && playerInSightRange) AttackPlayer();
     }
 
     private void Patroling()
     {
+        VHS.enabled = false;
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -72,6 +78,7 @@ public class EnemyAiTutorial : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        VHS.enabled = true;
     }
 
     private void AttackPlayer()
